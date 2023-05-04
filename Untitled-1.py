@@ -41,4 +41,4 @@ array = np.array(numbers)
 print(array)
 print(array[1:5:1])
 print(array[1:5:2])  # start[index]:stop[index](ex):step
-print('hi')
+print('hi gfkj;ljhvmcnuylkghncfgkjljh')
