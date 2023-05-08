@@ -55,7 +55,7 @@ for i in range(0, 5):
 
 
 
-
+# this code for playing sound-
 pygame.mixer.init()
 pygame.mixer.music.load('game-character-140506.mp3')
 pygame.mixer.music.play()
