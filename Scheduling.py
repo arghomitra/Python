@@ -1,5 +1,5 @@
+import datetime
 import time
-
 import time, winsound
 import requests
 import pygame
@@ -33,7 +33,7 @@ start = time.time()
 
 response = requests.get(url, headers=headers)
 
-print(response.json()[0]['fact'])
+print("**********"+response.json()[0]['fact'])
 
 stop = time.time()
 
@@ -48,7 +48,7 @@ print('its took' , seconds ,'seconds to run the script!')
 	# print('beep')
 	# time.sleep(1)
 
-for i in range(0, 5):
+for i in range(0, 2):
 	winsound.Beep(500,300)
 	time.sleep(1)
 
@@ -57,10 +57,35 @@ for i in range(0, 5):
 
 # this code for playing sound-
 pygame.mixer.init()
-pygame.mixer.music.load('game-character-140506.mp3')
+pygame.mixer.music.load('yeah.mp3')
 pygame.mixer.music.play()
 
 while pygame.mixer.music.get_busy() == True:
 	continue
+print("**********"+'audio played', '\n')
 
+
+
+for i in range(2):
+	print('tick')
+	time.sleep(1)
+	print('tock')
+	time.sleep(1)
+
+print(datetime.datetime.now())
+dt = datetime.datetime(2019, 10, 21, 16, 29, 0)  # year,month,day,hour,minute,second
+print(dt.year)
+now = datetime.datetime.now()
+print(datetime.datetime.fromtimestamp(10))
+
+
+# %Y: Year with century (e.g., 2023)
+# %m: Month as a zero-padded decimal number (e.g., 05 for May)
+# %d: Day of the month as a zero-padded decimal number (e.g., 08)
+# %H: Hour (24-hour clock) as a zero-padded decimal number (e.g., 15)
+# %M: Minute as a zero-padded decimal number (e.g., 30)
+# %S: Second as a zero-padded decimal number (e.g., 45)
+
+print(dt.strftime("%d %B %y")) # string formatting time
+print(now.strftime("%Hhr %Mmin %Ssec"))
 
