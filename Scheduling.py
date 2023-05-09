@@ -1,22 +1,24 @@
 import datetime
+import threading
 import time
 import time, winsound
 import requests
 import pygame
 
-
+'''
 print(time.time())
 print(time.ctime())
 print(time.ctime(0))
-'''
 
-> time.time() returns the current time as a number in seconds since a specific reference 
-point in the past (January 1, 1970). It's like a stopwatch that started counting when 
-computers were invented.
 
-> time.ctime(0) simply tells you the exact starting point of the time measurement used by
-your computer, which is January 1, 1970, at midnight.
-'''
+# -> time.time() returns the current time as a number in seconds since a specific reference 
+# point in the past (January 1, 1970). It's like a stopwatch that started counting when 
+# computers were invented.
+# 
+# -> time.ctime(0) simply tells you the exact starting point of the time measurement used by
+# your computer, which is January 1, 1970, at midnight.
+
+
 print(time.ctime(1683532389.4307165))
 
 
@@ -88,4 +90,22 @@ print(datetime.datetime.fromtimestamp(10))
 
 print(dt.strftime("%d %B %y")) # string formatting time
 print(now.strftime("%Hhr %Mmin %Ssec"))
+now += (datetime.timedelta(days = 100)) # after 100 days
+print(now.strftime("%d %m %y"))
+'''
+def sleep():
+	time.sleep(5)
+	print('Wake Up!')
+def multiplication(number):
+	for i in range(1,11):
+		print(i ,' * ', number,' = ' , i*number)
 
+sleep()
+multiplication(5)
+
+thread_sleep = threading.Thread(target = sleep)
+thread_multi = threading.Thread(target = multiplication(5))
+print('start')
+thread_sleep.start()
+thread_multi.start()
+print('stop')
